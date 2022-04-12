@@ -1,0 +1,131 @@
+.movie {
+  display: grid;
+  grid-template-columns: 2fr 3fr 2fr;
+  grid-template-areas: "poster description rates" "poster info starring";
+  grid-gap: 40px;
+
+  @media (max-width: $tablet) {
+    grid-template-columns: 2fr 3fr;
+    grid-template-areas: "poster rates" "poster description" "poster starring" "poster info";
+  }
+
+  @media (max-width: $small) {
+    grid-template-columns: 1fr;
+    grid-template-areas: "poster" "rates" " description" " starring" " info";
+    grid-gap: 20px;
+  }
+}
+
+.movie__img-wrap {
+  grid-area: poster;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding: 20px;
+  border-radius: 0 20px 0 20px;
+  border: 1px solid $accent;
+
+  @media (max-width: $tablet) {
+    padding: 10px;
+    border: none;
+  }
+}
+
+.movie__poster img {
+  width: 100%;
+}
+
+.movie__buttons-wrap {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+
+  @media (max-width: $desktop) {
+    flex-direction: column;
+  }
+}
+
+.movie__description {
+  grid-area: description;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+
+  @media (max-width: $small) {
+    gap: 10px;
+  }
+}
+
+.movie__title {
+  font-size: 40px;
+  line-height: 50px;
+  margin: 0;
+
+  @media (max-width: $desktop) {
+    font-size: 35px;
+    line-height: 40px;
+  }
+
+  @media (max-width: $tablet) {
+    font-size: 30px;
+    line-height: 35px;
+  }
+}
+
+.movie__plot {
+  margin: 0;
+  font-size: 18px;
+  line-height: 25px;
+
+  @media (max-width: $tablet) {
+    font-size: 16px;
+    line-height: 23px;
+  }
+}
+
+.movie__rates {
+  grid-area: rates;
+}
+
+.movie__rates-imbd {
+  color: lighten($accent, 30%);
+  font-size: 30px;
+  line-height: 40px;
+  margin: 0;
+}
+
+.movie__about {
+  grid-area: info;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.movie__about-item {
+  display: flex;
+}
+.marker {
+  color: #838383;
+  min-width: 90px;
+  display: block;
+}
+
+.movie__starring {
+  grid-area: starring;
+
+  & h3 {
+    color: lighten($accent, 30%);
+  }
+}
+
+.info {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}

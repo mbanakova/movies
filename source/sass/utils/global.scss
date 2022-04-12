@@ -1,0 +1,99 @@
+body {
+  @include font();
+  @include fields();
+  position: relative;
+  min-width: $mobile;
+  margin: 0 auto;
+  font-family: $font;
+  background-color: $dark;
+  color: $light;
+  overflow-x: hidden;
+}
+
+body,
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.header {
+  border-bottom: 1px solid $accent;
+  margin-bottom: 30px;
+
+  @media (max-width: $small) {
+    margin-bottom: 0;
+  }
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  & h2 {
+    margin: 0;
+
+    @media (max-width: $tablet) {
+      font-size: 18px;
+    }
+  }
+
+  @media (max-width: $small) {
+    flex-direction: column-reverse;
+    gap: 20px;
+  }
+}
+
+.button,
+button {
+  text-decoration: none;
+  display: block;
+  cursor: pointer;
+  color: inherit;
+  text-align: center;
+  font-size: 16px;
+  line-height: inherit;
+  font-family: $font;
+  padding: 10px 25px;
+  background-color: $accent;
+  border-radius: 8px;
+  transition: $tr;
+
+  &:hover {
+    background-color: darken($accent, 5%);
+  }
+
+  &:active {
+    background-color: darken($accent, 10%);
+  }
+
+  &--secondary {
+    background-color: darken($accent, 15%);
+
+    &:hover {
+      background-color: darken($accent, 20%);
+    }
+
+    &:active {
+      background-color: darken($accent, 25%);
+    }
+  }
+
+  @media (max-width: $desktop) {
+    padding: 10px 20px;
+  }
+}
+
+.wrapper {
+  max-width: 1240px;
+  width: 100%;
+  padding: 20px;
+  margin: 0 auto;
+}
